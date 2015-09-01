@@ -6,6 +6,8 @@ MAINTAINER Tiago Pires <tandrepires@gmail.com>
 ENV WILDFLY_VERSION 8.2.1.Final
 ENV WILDFLY_SHA1 77161d682005f26acb9d2df5548c8623ba3a4905
 ENV JBOSS_HOME /opt/jboss/wildfly
+# Gracefully shutdown Wildfly
+ENV LAUNCH_JBOSS_IN_BACKGROUND 1
 
 # Add the WildFly distribution to /opt, and make wildfly the owner of the extracted tar content
 # Make sure the distribution is available from a well-known place
