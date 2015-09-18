@@ -10,3 +10,6 @@ Based on jboss/base-jdk:8 image. From **alpine-jboss-base**, this image provides
 
 ### alpine-jboss-wildfly:8.2.1.Final
 Based on jboss/wildfly:8.2.1.Final image. From **alpine-openjdk:8**, this image provides JBoss/Wildfly:8.2.1.Final.
+
+### alpine-jboss-keycloak:1.5.0.Final
+Based on jboss/keycloak:1.5.0.Final image. From **alpine-openjdk:8**, this image provides JBoss/Keycloak:1.5.0.Final with postgres and postgres-ha support.
