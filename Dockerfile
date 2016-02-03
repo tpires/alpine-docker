@@ -3,11 +3,9 @@ FROM tpires/alpine-openjdk:8
 MAINTAINER Tiago Pires <tandrepires@gmail.com>
 
 # Set the WILDFLY_VERSION env variable
-ENV WILDFLY_VERSION 9.0.2.Final
-ENV WILDFLY_SHA1 75738379f726c865d41e544e9b61f7b27d2853c7
+ENV WILDFLY_VERSION 10.0.0.Final
+ENV WILDFLY_SHA1 c0dd7552c5207b0d116a9c25eb94d10b4f375549
 ENV JBOSS_HOME /opt/jboss/wildfly
-# Gracefully shutdown Wildfly
-ENV LAUNCH_JBOSS_IN_BACKGROUND 1
 
 # Add the WildFly distribution to /opt, and make wildfly the owner of the extracted tar content
 # Make sure the distribution is available from a well-known place
@@ -18,6 +16,9 @@ RUN cd $HOME \
     && mkdir -p /opt/jboss \
     && mv $HOME/wildfly-$WILDFLY_VERSION $JBOSS_HOME \
     && rm wildfly-$WILDFLY_VERSION.tar.gz
+
+# Ensure signals are forwarded to the JVM process correctly for graceful shutdown
+ENV LAUNCH_JBOSS_IN_BACKGROUND true
 
 # Expose the ports we're interested in
 EXPOSE 8080

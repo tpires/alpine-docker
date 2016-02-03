@@ -1,1 +1,1 @@
-# Alpine JBoss Wildfly 9.0.2.Final
+# Alpine JBoss Wildfly 10.0.0.Final
